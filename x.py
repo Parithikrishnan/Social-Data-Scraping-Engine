@@ -11,6 +11,10 @@ import requests
 from bs4 import BeautifulSoup
 import os 
 
+
+with open ('Storing_file.txt','a') as f:
+    f.write(\n\nX Data\n)
+
 driver = webdriver.Firefox()
 driver.get('https://x.com/i/flow/login')
 current_time = datetime.now()
@@ -19,7 +23,7 @@ print(f"{formatted_time} # Website opened")
 t.sleep(5)
 input_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "input.r-30o5oe.r-1dz5y72.r-13qz1uu.r-1niwhzg.r-17gur6a.r-1yadl64.r-deolkf.r-homxoj.r-poiln3.r-7cikom.r-1ny4l3l.r-t60dpp.r-fdjqy7")))
 t.sleep(3)
-input_field.send_keys("email-id")    # email needs to be added
+input_field.send_keys("Test118278")    # email needs to be added
 current_time = datetime.now()
 formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
 print(f"{formatted_time} # Filled\n")
@@ -31,21 +35,21 @@ print(f"{formatted_time} # Email done\n")
 t.sleep(1)
 next_button.click()
 t.sleep(10)
-username = driver.find_element(By.CSS_SELECTOR, "input[data-testid='ocfEnterTextTextInput']")
+#username = driver.find_element(By.CSS_SELECTOR, "input[data-testid='ocfEnterTextTextInput']")
 current_time = datetime.now()
-formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
-print(f"{formatted_time} # Username filled\n")
-t.sleep(3)
-username.send_keys("username") #Optional because it is filled only when the account is into suspicious activity 
-t.sleep(4)
-username.send_keys(Keys.RETURN)
+#formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
+#print(f"{formatted_time} # Username filled\n")
+#t.sleep(3)
+#username.send_keys("username") #Optional because it is filled only when the account is into suspicious activity 
+#t.sleep(4)
+#username.send_keys(Keys.RETURN)
 t.sleep(2)
 password = driver.find_element(By.CSS_SELECTOR, "input.r-30o5oe.r-1dz5y72.r-13qz1uu.r-1niwhzg.r-17gur6a.r-1yadl64.r-deolkf.r-homxoj.r-poiln3.r-7cikom.r-1ny4l3l.r-t60dpp.r-fdjqy7")
-current_time = datetime.now()
+#current_time = datetime.now()
 formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
 print(f"{formatted_time} # Password filled\n")
 t.sleep(2)
-password.send_keys("password") # Password needs to be added
+password.send_keys("testing@1") # Password needs to be added
 t.sleep(3)
 password_click = driver.find_element(By.CSS_SELECTOR, "button.css-175oi2r.r-sdzlij.r-1phboty.r-rs99b7.r-lrvibr.r-19yznuf.r-64el8z.r-1fkl15p.r-1loqt21.r-o7ynqc.r-6416eg.r-1ny4l3l")
 t.sleep(1)
@@ -84,7 +88,7 @@ for i in tweet_links:
     current_time = datetime.now()
     formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
     data = '\nDate:Time : '+formatted_time+"\nContent : "+str(content)+"\nLink : "+str(i)
-    with open('x_data.txt', 'a') as f:
+    with open('Storing_file.txt', 'a') as f:
         f.write(data+'\n\n')
         print(data)
         t.sleep(3)

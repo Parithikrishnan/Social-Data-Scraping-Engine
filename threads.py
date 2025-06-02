@@ -14,6 +14,7 @@ import os
 
 driver = webdriver.Firefox()
 url = input("Enter the name to scrape   : ")
+t.sleep(8)
 url_1 = 'https://www.threads.net/search?q='+url+'&serp_type=default&hl=en'
 driver.get(url_1)
 t.sleep(7)
@@ -32,6 +33,10 @@ for link in links_results:
             except ValueError:
                 continue 
 count_1 = 0
+
+with open ('Storing_file.txt','a') as f:
+    f.write(\n\nThreads Data\n)
+
 for i in post_links:
      driver.get(i)
      t.sleep(3)
@@ -39,7 +44,7 @@ for i in post_links:
      current_time = datetime.now()
      formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
      data = 'Date:time : '+formatted_time+"\nContent : "+str(content)+"\nLink : "+str(i)
-     with open('threads_data.txt', 'a') as f:
+     with open('Storing_file.txt', 'a') as f:
          f.write(data+'\n\n')
          print(data)
          t.sleep(1)
