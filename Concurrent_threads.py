@@ -4,18 +4,18 @@ import os
 Name = input("Enter the name to scrape: ")
 
 def threads_execution():
-    os.system(f"echo {Name} | ~/programming/python/Scraping/venv/bin/python ~/programming/python/Scraping/threads.py ")
+    os.system(f"echo {Name} | python threads.py ")               # Add the file path properly to make it work 
 
 def x_execution():
-    os.system(f"echo {Name} | ~/programming/python/Scraping/venv/bin/python ~/programming/python/Scraping/x.py ")
+    os.system(f"echo {Name} | python x.py ")                     # Add the file path properly to make it work 
 
 
 def linkedin_execution():
-   os.system(f"echo {Name} | ~/programming/python/Scraping/venv/bin/python ~/programming/python/Scraping/Linkedin.py ")
+   os.system(f"echo {Name} | python Linkedin.py ")               # Add the file path properly to make it work 
 
 
 def Instagram_execution():
-    os.system(f"echo {Name} | ~/programming/python/Scraping/venv/bin/python ~/programming/python/Scraping/instagram.py ")
+    os.system(f"echo {Name} | python instagram.py ")             # Add the file path properly to make it work 
 
 
 
