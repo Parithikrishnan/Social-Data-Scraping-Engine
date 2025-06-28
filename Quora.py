@@ -5,7 +5,7 @@ from selenium.webdriver.firefox.options import Options
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-query_string = input("Enter the input to scrap: ")
+query_string = input()
 query_list = query_string.split(" ")
 query_temp = query_list[0]
 for i in range(1, len(query_list)):
@@ -87,3 +87,5 @@ for i in target_links:
     
     with open('Storing_file.txt','a')as f:
         f.write(data_1 + data_2)
+
+driver.quit()

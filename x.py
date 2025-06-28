@@ -13,7 +13,7 @@ import os
 
 
 with open ('Storing_file.txt','a') as f:
-    f.write(\n\nX Data\n)
+    f.write("\n\nX Data\n")
 
 driver = webdriver.Firefox()
 driver.get('https://x.com/i/flow/login')
@@ -49,7 +49,7 @@ password = driver.find_element(By.CSS_SELECTOR, "input.r-30o5oe.r-1dz5y72.r-13qz
 formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
 print(f"{formatted_time} # Password filled\n")
 t.sleep(2)
-password.send_keys("testing@1") # Password needs to be added
+password.send_keys("testing@1")             # Password needs to be added
 t.sleep(3)
 password_click = driver.find_element(By.CSS_SELECTOR, "button.css-175oi2r.r-sdzlij.r-1phboty.r-rs99b7.r-lrvibr.r-19yznuf.r-64el8z.r-1fkl15p.r-1loqt21.r-o7ynqc.r-6416eg.r-1ny4l3l")
 t.sleep(1)
@@ -58,7 +58,7 @@ t.sleep(10)
 current_time = datetime.now()
 formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
 print(f"{formatted_time} # Website loged in\n")
-name_s = input("Enter the name you want to scrape     : ")
+name_s = input()
 url_1 = 'https://x.com/search?q='+name_s+'&src=typed_query'
 response = driver.get(url_1)
 tweet_links = []
@@ -78,7 +78,7 @@ while True:
                 continue  
     driver.execute_script("window.scrollBy(0, 500);")
     t.sleep(2)
-    if count > 100:         # Number of tweets can be set here
+    if count > 10:         # Number of tweets can be set here
         break
 Tweet_counts = 0
 for i in tweet_links:
