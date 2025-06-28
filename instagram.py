@@ -17,15 +17,15 @@ driver = webdriver.Firefox()
 driver.get('https://www.instagram.com/')
 t.sleep(3)
 username = driver.find_element(By.CSS_SELECTOR, "input[aria-label='Phone number, username, or email']")
-username.send_keys("user081759")   # Username needs to be added
+username.send_keys("USERNAME")   # Username needs to be added
 username.send_keys(Keys.TAB)
 t.sleep(2)
 password = driver.find_element(By.CSS_SELECTOR, "input[aria-label='Password']")
 t.sleep(1)
-password.send_keys("parithi4122W")    # Password needs to be added 
+password.send_keys("PASSWORDE")    # Password needs to be added 
 password.send_keys(Keys.RETURN)
 t.sleep(5)
-name_s = input("Enter the name you want to scrape that is automatically prefixed with #: ")
+name_s = input()
 searching_url = 'https://www.instagram.com/explore/search/keyword/?q=%23'+name_s
 driver.get(searching_url)
 response = driver.page_source
@@ -37,8 +37,6 @@ for link in search_results:
         opening_links.append(link)
 count = 0
 
-with open ('Storing_file.txt','a') as f:
-    f.write(\n\nInstagram Data\n)
 
 for post_url in opening_links:
     driver.get(post_url)

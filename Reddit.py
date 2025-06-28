@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 import os 
 
 
-query_string = input("Enter the name to scrape :")
+query_string = input()
 query_list = query_string.split(" ")
 query_temp = query_list[0]
 for i in range(1,len(query_list)):
