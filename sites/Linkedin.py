@@ -148,8 +148,6 @@ for li in li_elements:
 
 driver.quit()
 
-with open ('Storing_file.txt','a') as f:
-    f.write(\n\LinkedIn Data\n)
 with open("Soring_file.txt", "a") as f:
     for post in data:
         for key, value in post.items():
